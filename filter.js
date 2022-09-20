@@ -4,7 +4,6 @@
  * command node filter.js in the terminal
  */
 
-
 // Simple Filtering
 const people = [
   {
@@ -20,6 +19,12 @@ const people = [
     age: 18,
   },
 ];
+
+const oldEnough = people.filter(person => person.age >= 21);
+//console.log(oldEnough);
+
+const paul = people.filter(p => p.name === "Paul")[0];
+//console.log(paul);
 
 
 // Complex Filtering
@@ -55,3 +60,8 @@ const students = [
     ]
   },
 ];
+
+const has5yearsExp = skill => skill.yrsExperience >= 5;
+const hasStrongSkills = student => student.skills.filter(has5yearsExp).lenght > 0;
+const candidates = students.filter(hasStrongSkills);
+console.log(candidates);
